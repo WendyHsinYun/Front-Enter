@@ -1,0 +1,19 @@
+{
+  "name": "front-enter",
+  "version": "1.0.0",
+  "description": "<h1>\r Connect Data\r </h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack",
+    "watch": "webpack --watch --mode development",
+    "deploy": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
