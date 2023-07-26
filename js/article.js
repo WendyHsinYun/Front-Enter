@@ -55,7 +55,7 @@ firebase.database().ref('front-enter-json/update-article').on('value', (snapshot
       object.element = block;
       object.element.style.display = 'flex';
       const starList = document.querySelectorAll('.star');
-      starList.forEach((star)=>{star.style.display = 'none'} )
+      starList.forEach((star)=>{star.style.display = 'flex'} )
     });
 
     smallClassClick(articles);
