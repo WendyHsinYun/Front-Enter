@@ -6,25 +6,15 @@ const profilePhone = document.getElementById('profilePhone');
 const modifyData = document.querySelector('.modifyData');
 const modified = document.querySelector('.modified');
 const cancel = document.querySelector('.cancel');
-
 const profileUl = document.getElementById('profile')
-// console.log(profileUl);
 const profileInputList = profileUl.querySelectorAll('input')
-
 const logoutBtn = document.querySelector('.logout');
-
 const inputPhoto = document.getElementById('inputPhoto')
-
 const line = document.querySelector('.line');
 const personalData = document.querySelector('.personalData')
-
 const collection = document.querySelector('.collectBtn')
-
 const modifyBtn = document.querySelector('.modifyBtn');
-
 const dataCollection = document.querySelector('.dataCollection')
-
-
 
 //  profile display
 personalData.addEventListener('click', ()=>{

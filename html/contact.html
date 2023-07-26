@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>article</title>
-    <link rel="stylesheet" href="../css/article.css">
+    <title>聯絡頁面</title>
+    <link rel="stylesheet" href=" ../css/contact.css">
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4poCUfkAs_97yUwR5p00wxVgH7-ncnuM&amp;callback=initMap"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+      emailjs.init("OUQqOz6igY5YaEUO8");
+      })();
+    </script>
     <script src="../js/login.js"></script>
     <script src="../js/all.js" defer></script>
-    <script src="../js/article.js" defer></script>
-    <script src="../js/profile.js" defer></script>
+    <script src="../js/contact.js" defer></script>
   </head>
   <body> 
     <div class="header"> 
@@ -39,7 +45,8 @@
           <div class="remindBox">
             <div class="header">Remind </div>
             <div class="content"> </div>
-            <button>OK </button>
+            <button class="okButton">OK </button>
+            <button class="noButton">No</button>
           </div>
         </div>
       </div>
@@ -50,12 +57,8 @@
       </div>
       <div id="black-box"></div>
     </div>
-    <div id="nav-center-upper"><img class="slide1" src="https://firebasestorage.googleapis.com/v0/b/front-enter.appspot.com/o/images%2Frotate-img-2.jpg?alt=media&amp;token=f28dbea4-af0c-4743-a75a-426198fe409e" alt=""><img class="slide2" src="https://firebasestorage.googleapis.com/v0/b/front-enter.appspot.com/o/images%2Frotate-img-1.jpg?alt=media&amp;token=059f5677-409b-4fc1-a772-baf1dece5063" alt=""><img class="slide3" src="https://firebasestorage.googleapis.com/v0/b/front-enter.appspot.com/o/images%2Frotate-img-3.jpg?alt=media&amp;token=8f7f8f02-5066-452a-863c-a4e715d2657a" alt="">
-      <div class="slogan">
-        <p>蒐羅前端學校 </p>
-      </div>
-    </div>
-    <div class="nav-center-lower"><span id="allClass">全部</span><span id="smallClass">小班制</span><span id="freeRange">放養制</span><span id="oneOnOne">一對一</span>
+    <div class="info"> 
+      <div class="info-header">技能樹</div>
       <div class="test-go test-go-container"><img class="test-go-round" src="https://frankyeah.github.io/Front-Enter/images/FE_test_go.png"></div>
       <div class="testContainer"> 
         <div class="testBackground"> 
@@ -97,22 +100,26 @@
         </div>
       </div>
     </div>
-    <div class="navCenter"></div>
-    <template data-classroom-block>
-      <div class="block">
-        <div class="star"></div>
-        <div class="city"><img class="locationLogo" src="https://frankyeah.github.io/Front-Enter/images/location_icon_one.png">
-          <div class="cityName"> </div>
-        </div>
-        <div class="lowerBlock"> 
-          <div class="squareOuter"><img class="squareInner" src="https://frankyeah.github.io/Front-Enter/images/2.jpg"></div>
-          <div class="className"> </div>
-          <div class="preface"> </div><a class="readmore">
-            <div class="readmoreGuide">read more</div>
-            <div class="readmoreArrow"></div></a>
-        </div>
+    <div class="main">
+      <div class="contactInfo">
+        <div class="contactHeader">聯絡我們</div>
+        <div class="intro">想進一步了解我們？歡迎來信與我們聯絡。</div>
+        <form id="contactForm">
+          <input class="name" type="text" name="name" placeholder="名字" required>
+          <input class="email" type="email" name="email" placeholder="信箱" required>
+          <input class="topic" type="text" name="topic" placeholder="信件主旨" required>
+          <textarea id="contactContent" cols="30" rows="10" name="message" placeholder="信件內容"></textarea>
+          <button type="submit">送出</button>
+        </form>
       </div>
-    </template>
+      <div class="addressInfo">
+        <div class="address"> 
+          <div class="icon"></div>
+          <div class="addressLine">新北市永和區竹林路112號之1號</div>
+        </div>
+        <div id="googleMap"> </div>
+      </div>
+    </div>
     <div class="top">
       <div id="topwrap" onclick="toTop()"> 
         <div class="top-arrow"></div>

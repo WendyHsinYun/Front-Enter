@@ -4,13 +4,18 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title index
-        link(rel="stylesheet", href=" ../css/index.css")
+        title 聯絡頁面
+        link(rel="stylesheet", href=" ../css/contact.css")
         script(src='https://www.gstatic.com/firebasejs/5.5.1/firebase.js')
-        
+        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4poCUfkAs_97yUwR5p00wxVgH7-ncnuM&callback=initMap")
+        script(type='text/javascript' src='https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js')
+        script(type='text/javascript').
+            (function(){
+            emailjs.init("OUQqOz6igY5YaEUO8");
+            })();
         script(src="../js/login.js")
         script(src="../js/all.js" defer)
-        script(src="../js/index.js" defer)
+        script(src="../js/contact.js" defer)
         
     body 
         .header 
@@ -38,7 +43,8 @@ html(lang="en")
                     .remindBox
                         .header Remind 
                         .content 
-                        button OK 
+                        button.okButton OK 
+                        button.noButton No
                          
                          
                     
@@ -56,10 +62,7 @@ html(lang="en")
 
 
         .info 
-            .words 
-                h3 FRONT-ENTER 
-                h4 前端轉職資訊
-            .arrow
+            .info-header 技能樹
             .test-go.test-go-container
                 img.test-go-round(src="https://frankyeah.github.io/Front-Enter/images/FE_test_go.png")
             .testContainer 
@@ -90,57 +93,23 @@ html(lang="en")
                         .pieContainer
                             .pieChart
                                 .pieNum 20%
+        .main
+            .contactInfo
+                 .contactHeader 聯絡我們
+                 .intro 想進一步了解我們？歡迎來信與我們聯絡。
+                 form#contactForm
+                    input.name(type="text" name="name" placeholder="名字" required) 
+                    input.email(type="email" name="email" placeholder="信箱" required)  
+                    input.topic(type="text" name="topic" placeholder="信件主旨" required) 
+                    textarea#contactContent(cols="30", rows="10" name="message" placeholder="信件內容")
+                    button(type='submit') 送出
+            .addressInfo
+                .address 
+                    .icon
+                    .addressLine 新北市永和區竹林路112號之1號
+                #googleMap 
 
-        .test 
-            p 
-                | 想知道自己適合什麼學習環境嗎？
-                br 
-                | 可以點擊按鈕測測看喔！
-                br
-            button.test-go-square(type="button") 測驗 GO
 
-        .classroom
-            p 教室精選
-            button.appworks(type="button") AppWorks School
-            button.ponpon(type="button") 彭彭的課程教學
-            button.ruby(type="button") 五倍紅寶石
-        .article-skilltree
-            .box.box_article 
-                img.pen(src="https://frankyeah.github.io/Front-Enter/images/FE_pen.png")
-                h2 探索
-                .line 
-                p 
-                    | 我們提供公正的資訊，
-                    br 
-                    | 幫您順利轉職，
-                    br
-                    | 並追蹤最新的業界動態。
-                    br
-                button.article(type="button")  找學校
-            .box.box_skilltree  
-                img.pen(src="https://frankyeah.github.io/Front-Enter/images/FE_pen.png")
-                h2 技能樹
-                .line 
-                p 
-                    | 前端包含哪些技術？
-                    br 
-                    | 你又學會了哪些？
-                    br 
-                    | 趕緊點進來試試看。
-                    br
-                button.article(type="button")  技能樹
-
-        .about 
-            .about_box       
-                h2 關於
-                .line
-                p 
-                    | 近年來，社會對於軟體工程師的需求急速增加，全台各地的補習也如雨後春筍般開業， 然而人的時間有限，要如何找到適合自己的學習環境？
-                    br
-                    |
-                    br
-                    | 「Front-Enter」特別針對前端工程的學習資源，進行蒐集、分類， 期待讓有志成為前端工程師的人，找到最適合自己的學習環境。
-                    br
         .top
             #topwrap(onclick="toTop()") 
                 .top-arrow
@@ -157,6 +126,9 @@ html(lang="en")
                     img.fb(src="https://frankyeah.github.io/Front-Enter/images/new-facebook-blue.svg")
                 a(href="https://line.me/ti/p/OBVsxhRD9r" target="_blank") 
                     img.line(src="https://frankyeah.github.io/Front-Enter/images/FE_line.png")
+
+
         #animation
             img#animation-logo(src="https://frankyeah.github.io/Front-Enter/images/FE_logo-4.png", alt="")
             #animation-blue
+

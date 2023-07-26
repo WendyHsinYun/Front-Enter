@@ -132,19 +132,3 @@ triLeft.addEventListener('click', () => {
     }
   });
 
-
-
-// search bar 
-const searchInput = document.querySelector('[data-search]'); 
-
-searchInput.addEventListener('keydown', e => {
-  if (e.keyCode === 13) {
-    e.preventDefault();
-    window.location.href = 'article.html';
-    }
-})
-
-searchGlass.addEventListener('click', e => {
-  e.preventDefault();
-  window.location.href = 'article.html';
-})

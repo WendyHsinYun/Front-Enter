@@ -64,7 +64,6 @@ loginBackground.addEventListener('click', function(event){
   const loginBtn = document.getElementById('login');
   const buttonOK = remindBox.querySelector('button')
   const remindBoxContent = remindBox.querySelector('.content');
-
   const forgetPW = loginContainer.querySelector('.forgetPW');
 
   // click ok and reload page    
@@ -243,6 +242,7 @@ loginBackground.addEventListener('click', function(event){
   }
 
   // profile.html
+
   function headerProfile(){
     headerLogin.addEventListener('click', function(){
       loginContainer.style.display = 'none';
@@ -306,9 +306,15 @@ firebase.auth().onAuthStateChanged(function(user) {
 // 導回 article.html
 
 const searchButton = document.getElementById('search-button');
-
 searchButton.addEventListener('click', function() {
   window.location.href = 'article.html';
+});
+
+// 導入技能樹
+
+const skillButton = document.getElementById('skilltree-button');
+skillButton.addEventListener('click', function() {
+  window.location.href = 'skilltree.html';
 });
 
 
@@ -737,3 +743,109 @@ function compareSchools(quizData, articles) {
     }
    ))
  }
+
+ 
+// search bar Text 
+const searchInput = document.querySelector('[data-search]'); 
+
+searchBarText();
+
+searchBarVoice();
+
+function searchBarText(){
+
+  searchInput.addEventListener('keydown', e => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      searchBox.style.display = 'none';
+      blackBox.style.display = 'none';
+
+      const inputValue = e.target.value.toLowerCase().trim();
+      window.location = 'article.html?id=' + inputValue;
+
+      // firebase.database().ref('front-enter-json/update-article').on('value', (snapshot) => {
+
+      //   const articles = snapshot.val(); 
+        
+      //     articles.forEach(object => {
+      //       const isVisible = (object.cityName.toLowerCase().includes(inputValue) || object.className.toLowerCase().includes(inputValue) || object.preface.toLowerCase().includes(inputValue)) && (inputValue.length > 0);
+  
+      //       object.element.style.display = isVisible ? 'flex' : 'none';
+            
+      //       });
+
+      //   });
+
+      }
+  })
+}
+
+searchGlass.addEventListener('click', e => {
+  e.preventDefault();
+  searchBox.style.display = 'none';
+  blackBox.style.display = 'none';
+
+  window.location = 'article.html?id=' + e.target.value;
+
+  const value = searchInput.value.toLowerCase().trim();
+
+  // articles.forEach(object => {
+  //   const isVisible = (object.cityName.toLowerCase().includes(value) || object.className.toLowerCase().includes(value) || object.preface.toLowerCase().includes(value)) && (value.length > 0);
+  //   object.element.style.display = isVisible ? 'flex' : 'none';
+  //   })
+})
+
+
+
+// search bar audio to text
+
+const micIcon = document.querySelector('.voice');
+const speechRecognition = window.webkitSpeechRecognition;
+
+// 過濾語音獲得的 value 
+
+function searchBarVoice(value){
+if(value){
+  window.location = 'article.html?id=' + value;
+
+  searchBox.style.display = 'none';
+  blackBox.style.display = 'none';
+  searchInput.value = '';
+  micIcon.style.display = 'flex';
+  const value = searchInput.value.toLowerCase().trim();
+  // articles.forEach(object => {
+  //   const isVisible = (object.cityName.toLowerCase().includes(value) || object.className.toLowerCase().includes(value) || object.preface.toLowerCase().includes(value)) && (value.length > 0);
+  //   object.element.style.display = isVisible ? 'flex' : 'none';
+  //     })
+    }
+}
+
+//
+
+if (speechRecognition){
+  console.log('my browser supports speech Recognition');
+  const recognition = new speechRecognition();
+    micIcon.addEventListener('click', function micIconClick(){
+      micIcon.style.display = 'none'
+      recognition.start();
+    })
+    recognition.addEventListener('end', function() {
+      recognition.stop();
+    });
+
+  recognition.addEventListener('result', function(event) {
+    const transcript = event.results[0][0].transcript;
+    console.log('Transcript:', transcript);
+    searchInput.value = transcript;
+    setTimeout(function() {
+      searchBarVoice(transcript);
+    }, 1000); 
+  });
+}else{
+  micIcon.addEventListener('click', function(){ 
+  alert('您的瀏覽器不支援語音辨識功能，請切換瀏覽器')
+})
+}
+
+
+
