@@ -358,6 +358,8 @@ blackBox.onclick = () => {
 
 // .test-go 測驗
 const testGo = document.querySelector('.test-go')
+const testGoHome = document.querySelector('.test-go-square')
+
 const testContainer = document.querySelector('.testContainer ');
 
 const testBackground = document.querySelector('.testBackground');
@@ -640,15 +642,27 @@ function compareSchools(quizData, articles) {
   }
 
 
-    testGo.addEventListener('click', function(){  // 從首頁開啟測驗介紹
-          currentQuiz = 0;
-          testContainer.style.display = 'flex';
-          testHeader.style.display = 'flex';
-          testIntro.style.display = 'flex';
-          startBtn.style.display = 'flex';
-          testList.style.display = 'none';
-          console.log(currentQuiz);
-        })
+  testGo.addEventListener('click', function(){  
+        currentQuiz = 0;
+        testContainer.style.display = 'flex';
+        testHeader.style.display = 'flex';
+        testIntro.style.display = 'flex';
+        startBtn.style.display = 'flex';
+        testList.style.display = 'none';
+        console.log(currentQuiz);
+      })
+
+  testGoHome.addEventListener('click', function(){  
+    // 從首頁開啟測驗介紹          
+    currentQuiz = 0;
+    testContainer.style.display = 'flex';
+    testHeader.style.display = 'flex';
+    testIntro.style.display = 'flex';
+    startBtn.style.display = 'flex';
+    testList.style.display = 'none';
+    console.log(currentQuiz);
+  })
+
 
     startBtn.addEventListener('click', function(){ 
       // 從測驗介紹開始測驗
@@ -762,19 +776,6 @@ function searchBarText(){
 
       const inputValue = e.target.value.toLowerCase().trim();
       window.location = 'article.html?id=' + inputValue;
-
-      // firebase.database().ref('front-enter-json/update-article').on('value', (snapshot) => {
-
-      //   const articles = snapshot.val(); 
-        
-      //     articles.forEach(object => {
-      //       const isVisible = (object.cityName.toLowerCase().includes(inputValue) || object.className.toLowerCase().includes(inputValue) || object.preface.toLowerCase().includes(inputValue)) && (inputValue.length > 0);
-  
-      //       object.element.style.display = isVisible ? 'flex' : 'none';
-            
-      //       });
-
-      //   });
 
       }
   })

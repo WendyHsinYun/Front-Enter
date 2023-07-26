@@ -30,15 +30,15 @@ const searchInput = document.querySelector('[data-search]');
   
   
 // 教室精選
-document.querySelector('.classroom').querySelector('.appworks').addEventListener('click', ()=>{
+document.querySelector('.appworks').addEventListener('click', ()=>{
   window.location.href = 'content.html?id=1538646651342';
 })
 
-document.querySelector('.classroom').querySelector('.ponpon').addEventListener('click', ()=>{
+document.querySelector('.ponpon').addEventListener('click', ()=>{
   window.location.href = 'content.html?id=1539507849063';
 })
 
-document.querySelector('.classroom').querySelector('.ruby').addEventListener('click', ()=>{
+document.querySelector('.ruby').addEventListener('click', ()=>{
   window.location.href = 'content.html?id=1539674167504';
 })
 
