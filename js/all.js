@@ -439,14 +439,14 @@ const url = '../json/front-enter-export.json';
 
 // 將資料上傳 firebase realtime database
 
-fetch(url)
-  .then(response => response.json())
-  .then(jsonData => {
-    firebase.database().ref('front-enter-json/').set(jsonData);
-  })
-  .catch(error => {
-    console.error('Error fetching JSON data:', error);
-  });
+// fetch(url)
+//   .then(response => response.json())
+//   .then(jsonData => {
+//     firebase.database().ref('front-enter-json/').set(jsonData);
+//   })
+//   .catch(error => {
+//     console.error('Error fetching JSON data:', error);
+//   });
 
 // 從 firebase 獲取 json 檔案
 
@@ -571,7 +571,7 @@ function compareSchools(quizData, articles) {
     return answers;
   }
 
-
+  let percentage = 0;
   
   function testEnd(){ // 中途停止
   testBackground.addEventListener('click', function(event){
@@ -643,17 +643,6 @@ function compareSchools(quizData, articles) {
 
 
   testGo.addEventListener('click', function(){  
-        currentQuiz = 0;
-        testContainer.style.display = 'flex';
-        testHeader.style.display = 'flex';
-        testIntro.style.display = 'flex';
-        startBtn.style.display = 'flex';
-        testList.style.display = 'none';
-        console.log(currentQuiz);
-      })
-
-  testGoHome.addEventListener('click', function(){  
-    // 從首頁開啟測驗介紹          
     currentQuiz = 0;
     testContainer.style.display = 'flex';
     testHeader.style.display = 'flex';
@@ -661,8 +650,6 @@ function compareSchools(quizData, articles) {
     startBtn.style.display = 'flex';
     testList.style.display = 'none';
     console.log(currentQuiz);
-  })
-
 
     startBtn.addEventListener('click', function(){ 
       // 從測驗介紹開始測驗
@@ -676,6 +663,33 @@ function compareSchools(quizData, articles) {
       loadQuiz();
       console.log(currentQuiz);
     })
+  
+  })
+
+  testGoHome.addEventListener('click', function(){  
+    // 從首頁開啟測驗介紹          
+    currentQuiz = 0;
+    testContainer.style.display = 'flex';
+    testHeader.style.display = 'flex';
+    testIntro.style.display = 'flex';
+    startBtn.style.display = 'flex';
+    testList.style.display = 'none';
+    console.log(currentQuiz);
+  })
+
+
+  startBtn.addEventListener('click', function(){ 
+    // 從測驗介紹開始測驗
+    currentQuiz = 0;
+    testHeader.style.display = 'none';
+    testIntro.style.display = 'none';
+    this.style.display = 'none';
+    testQuestion.style.display = 'flex';
+    testNumber.style.display = 'flex';
+    testList.style.display = 'flex';
+    loadQuiz();
+    console.log(currentQuiz);
+  })
 
 
     
@@ -686,6 +700,11 @@ function compareSchools(quizData, articles) {
     function randomClassNum(){
       return Math.floor(Math.random() * 9);
     }
+
+    
+    let matchedSchool = ''; 
+    let id = '';
+    let newURL = '';
 
     function changePercentage(articles) {
       var intervalId = setInterval(function() {
@@ -704,10 +723,9 @@ function compareSchools(quizData, articles) {
     }
     
 
-    let percentage = 0; 
-    let matchedSchool = ''; 
-    let id = '';
-    let newURL = '';
+     
+    
+
   
     
 

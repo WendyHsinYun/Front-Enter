@@ -39,6 +39,7 @@ let urlFalse = 'https://frankyeah.github.io/Front-Enter/images/star-border.svg';
 
 firebase.database().ref('front-enter-json/update-article').on('value', (snapshot) => {
   const articles = snapshot.val(); 
+  // console.log(articles);
     articles.forEach(object => {
       const block = blockTemplate.content.cloneNode(true).children[0];
       const cityName = block.querySelector('.cityName');
@@ -55,7 +56,7 @@ firebase.database().ref('front-enter-json/update-article').on('value', (snapshot
       object.element = block;
       object.element.style.display = 'flex';
       const starList = document.querySelectorAll('.star');
-      starList.forEach((star)=>{star.style.display = 'flex'} )
+      starList.forEach((star)=>{star.style.display = 'none'} )
     });
 
     smallClassClick(articles);
@@ -69,6 +70,7 @@ firebase.database().ref('front-enter-json/update-article').on('value', (snapshot
     remoteClickFunction(articles);
     contentLink(articles)
   });
+
 
 
 
@@ -101,7 +103,7 @@ firebase.database().ref('front-enter-json/update-article').on('value', (snapshot
       });
     } else {
       console.log("User is not signed in.");
-      starList.forEach((star)=>{star.style.display = 'none'} )
+      starList.forEach((star)=>{star.style.display = 'flex'} )
     }
   });
   
@@ -109,14 +111,14 @@ firebase.database().ref('front-enter-json/update-article').on('value', (snapshot
 
     // 將按下星星的變化存到 firebase realtime database
     firebase.auth().onAuthStateChanged(function(user) {
-      const starList = document.querySelectorAll('.star');
-
       if (user) {
         const userId = user.uid;
         firebase.database().ref('users/'+ userId +'/user-article/').on('value', (snapshot) => { 
         const updateArticle = snapshot.val(); 
 
         updateArticle.forEach((currentArticle, index) => {
+          const starList = document.querySelectorAll('.star');
+          starList.forEach((star)=>{star.style.display = 'flex'} )
           const star = starList[index];
 
           star.style.background = `url(${currentArticle.clicked ? urlTrue : urlFalse}) 50% / cover no-repeat`;
