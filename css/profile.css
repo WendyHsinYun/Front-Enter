@@ -290,6 +290,12 @@ html body {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .header #search-box {
   position: absolute;
@@ -437,7 +443,7 @@ html body {
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
-#nav-upper .className {
+#nav-upper #profileHeader {
   position: absolute;
   background-color: rgba(128, 128, 128, 0.8);
   border-radius: 8px;
@@ -1023,6 +1029,13 @@ html body {
 }
 .navCenter .displayProfile .modifyBtn {
   margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .navCenter .displayProfile .modifyBtn button {
   display: -webkit-box;
@@ -1096,6 +1109,300 @@ html body {
   height: 20px;
   cursor: pointer;
 }
+.navCenter .displayProfile .postSystem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+}
+.navCenter .displayProfile .postSystem .postFirstCol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.navCenter .displayProfile .postSystem .postFirstCol .postHeader, .navCenter .displayProfile .postSystem .postFirstCol .postPreface, .navCenter .displayProfile .postSystem .postFirstCol .postTimeStamp {
+  color: white;
+  background-color: #5f5f5f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.navCenter .displayProfile .postSystem .postFirstCol .postHeader {
+  width: 150px;
+  white-space: nowrap;
+}
+.navCenter .displayProfile .postSystem .postFirstCol .postPreface {
+  width: 300px;
+}
+.navCenter .displayProfile .postSystem .postFirstCol .postTimeStamp {
+  width: 100px;
+}
+.navCenter .displayProfile .postSystem .postArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.navCenter .displayProfile .postSystem .postArea .postUl:hover {
+  background-color: rgba(26, 216, 210, 0.3490196078);
+  color: #3a3a3a;
+}
+.navCenter .displayProfile .postSystem .postArea .postUl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: #5f5f5f;
+  list-style-type: none;
+}
+.navCenter .displayProfile .postSystem .postArea .postUl .postHeader, .navCenter .displayProfile .postSystem .postArea .postUl .postPreface, .navCenter .displayProfile .postSystem .postArea .postUl .postTimeStamp {
+  cursor: pointer;
+  color: #5f5f5f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 10px;
+  border: 1px solid #cfcfcf;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.navCenter .displayProfile .postSystem .postArea .postUl .postHeader {
+  width: 150px;
+  white-space: nowrap;
+  line-height: 25px;
+}
+.navCenter .displayProfile .postSystem .postArea .postUl .postPreface {
+  width: 300px;
+}
+.navCenter .displayProfile .postSystem .postArea .postUl .postTimeStamp {
+  width: 100px;
+}
+.navCenter .displayProfile .postSystem .postBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+.navCenter .displayProfile .postSystem .postBtn button:hover {
+  background-color: #707070;
+}
+.navCenter .displayProfile .postSystem .postBtn button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 95px;
+  background-color: #b3b3b3;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  white-space: nowrap;
+  line-height: 20px;
+  border-radius: 5px;
+  border: none;
+  letter-spacing: 3px;
+  cursor: pointer;
+  margin: 50px;
+}
+.navCenter .displayProfile .createPost {
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.navCenter .displayProfile .createPost .postBtnList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+.navCenter .displayProfile .createPost .postBtnList button:hover {
+  background-color: #707070;
+}
+.navCenter .displayProfile .createPost .postBtnList button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 95px;
+  background-color: #b3b3b3;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  white-space: nowrap;
+  line-height: 20px;
+  border-radius: 5px;
+  border: none;
+  letter-spacing: 3px;
+  cursor: pointer;
+  margin: 20px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage {
+  list-style-type: none;
+  padding: 0;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  width: auto;
+}
+.navCenter .displayProfile .createPost ul#createPostPage li {
+  color: #737373;
+  letter-spacing: 3px;
+  margin: 15px;
+  width: 550px;
+  margin-left: 25%;
+}
+.navCenter .displayProfile .createPost ul#createPostPage li label {
+  font-size: 18px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage li input, .navCenter .displayProfile .createPost ul#createPostPage li textarea {
+  line-height: 25px;
+  font-size: 16px;
+  width: 350px;
+  margin-left: 10px;
+  padding-left: 8px;
+  border-radius: 5px;
+  padding: 5px;
+  letter-spacing: 2px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .recLi, .navCenter .displayProfile .createPost ul#createPostPage .sqLi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .recLi label, .navCenter .displayProfile .createPost ul#createPostPage .sqLi label {
+  white-space: nowrap;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .recLi .btn, .navCenter .displayProfile .createPost ul#createPostPage .sqLi .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 20px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .recLi .btn button:hover, .navCenter .displayProfile .createPost ul#createPostPage .sqLi .btn button:hover {
+  opacity: 0.8;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .recLi .btn button, .navCenter .displayProfile .createPost ul#createPostPage .sqLi .btn button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 35px;
+  letter-spacing: 2px;
+  width: 80px;
+  background-color: #1cb5e0;
+  color: white;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  margin: 10px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .recLi .image-preview, .navCenter .displayProfile .createPost ul#createPostPage .sqLi .image-preview {
+  margin-left: 50px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .recLi {
+  margin-top: 60px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .sqLi {
+  margin-bottom: 100px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .sqLi .btn {
+  margin-left: 40px;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .contentLi {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.navCenter .displayProfile .createPost ul#createPostPage .contentLi #cContent {
+  margin-top: 25px;
+  width: 450px;
+  height: 300px;
+  white-space: pre-wrap;
+}
 
 @media screen and (max-width: 880px) {
   .navCenter {
@@ -1139,6 +1446,21 @@ html body {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .navCenter .displayProfile .postSystem .postArea {
+    border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navCenter .displayProfile .postSystem .postArea .postUl {
+    width: auto;
+  }
+  .navCenter .displayProfile .postSystem .postArea .postUl .postPreface {
+    display: none;
+  }
 }
 @media screen and (max-width: 630px) {
   .navCenter .buttonList .buttonListDiv {
@@ -1168,6 +1490,9 @@ html body {
   }
   .navCenter .displayProfile ul#profile li input {
     font-size: 14px;
+  }
+  .navCenter .displayProfile .modifyBtn {
+    display: none;
   }
   .navCenter .displayProfile .modifyBtn button {
     font-size: 14px;

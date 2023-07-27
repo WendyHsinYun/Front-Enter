@@ -198,7 +198,9 @@ html body
           border: none
           border-radius: 3px
           cursor: pointer
-
+          display: flex
+          justify-content: center
+          
 
       
   #search-box
@@ -307,7 +309,7 @@ html body
     width: 100%
     opacity: 1
     transition: opacity 1s
-  .className
+  #profileHeader
     position: absolute
     background-color: $darkGrey
     border-radius: 8px
@@ -671,6 +673,9 @@ html body
 
     .modifyBtn
       margin-top: 15px
+      display: flex
+      flex-direction: row
+      // display: none
       button
         display: flex
         justify-content: center
@@ -722,6 +727,180 @@ html body
           height: 20px
           cursor: pointer
 
+    .postSystem
+      display: flex
+      flex-direction: column
+      display: none
+      .postFirstCol 
+        display: flex
+        .postHeader, .postPreface, .postTimeStamp
+          color: white
+          background-color: #5f5f5f
+          display: flex
+          justify-content: center
+          align-items: center
+          padding: 10px 10px
+          // border: 1px solid red
+          box-sizing: border-box
+        .postHeader
+          width: 150px
+          white-space: nowrap
+        .postPreface
+          width: 300px
+        .postTimeStamp
+          width: 100px
+      .postArea
+        display: flex
+        flex-direction: column
+        .postUl:hover
+          background-color: #1ad8d259
+          color: #3a3a3a
+        .postUl
+          display: flex
+          justify-content: flex-start
+          color: #5f5f5f
+          list-style-type: none
+          .postHeader, .postPreface, .postTimeStamp
+            cursor: pointer
+            color: #5f5f5f
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 10px 10px
+            border: 1px solid #cfcfcf
+            box-sizing: border-box
+          .postHeader
+            width: 150px
+            white-space: nowrap
+            line-height: 25px
+          .postPreface
+            width: 300px
+          .postTimeStamp
+            width: 100px
+      .postBtn
+        display: flex
+        flex-direction: row
+        justify-content: center
+        width: 100%
+        
+        button:hover
+          background-color: #707070
+        button
+          display: flex
+          justify-content: center
+          width: 95px
+          background-color: #b3b3b3
+          color: white
+          font-size: 16px
+          padding: 10px
+          white-space: nowrap
+          line-height: 20px
+          border-radius: 5px
+          border: none
+          letter-spacing: 3px
+          cursor: pointer
+          margin: 50px
+    .createPost
+      // border: 1px solid red
+      width: 600px
+      display: flex
+      flex-direction: column
+      .postBtnList
+        display: flex
+        display: none
+        flex-direction: row
+        justify-content: center
+        width: 100%
+        button:hover
+          background-color: #707070
+        button
+          display: flex
+          justify-content: center
+          width: 95px
+          background-color: #b3b3b3
+          color: white
+          font-size: 16px
+          padding: 10px
+          white-space: nowrap
+          line-height: 20px
+          border-radius: 5px
+          border: none
+          letter-spacing: 3px
+          cursor: pointer
+          margin: 20px      
+      ul#createPostPage 
+        list-style-type: none
+        padding: 0
+        display: none
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        color: black 
+        width: auto
+        li
+          color: $grey
+          letter-spacing: 3px
+          margin: 15px
+          width: 550px
+          margin-left: 25%
+          label 
+            font-size: 18px
+          input, textarea
+            line-height: 25px
+            font-size: 16px
+            width: 350px
+            margin-left: 10px 
+            padding-left: 8px
+            border-radius: 5px 
+            padding: 5px
+            letter-spacing: 2px
+        .recLi, .sqLi 
+          display: flex
+          flex-direction: row
+          align-items: center
+          margin-bottom: 15px
+          margin-top: 30px
+          label
+            white-space: nowrap
+          .btn
+            display: flex
+            flex-direction: column
+            margin-left: 20px
+            button:hover
+              opacity: .8
+            button 
+              display: flex
+              justify-content: center
+              align-content: center
+              border-radius: 5px
+              font-size: 12px
+              line-height: 35px
+              letter-spacing: 2px
+              width: 80px
+              background-color: $dark-blue
+              color: white
+              cursor: pointer
+              border: none
+              white-space: nowrap
+              margin: 10px
+          .image-preview
+            margin-left: 50px
+        .recLi
+          margin-top: 60px
+        .sqLi 
+          margin-bottom: 100px
+          .btn
+            margin-left: 40px 
+        .contentLi
+          margin-top: 30px
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+          #cContent
+            margin-top: 25px
+            width: 450px
+            height: 300px
+            white-space: pre-wrap
                       
 @media screen and (max-width: 880px)
   .navCenter
@@ -745,8 +924,18 @@ html body
         margin-bottom: 30px
       .buttonListDiv
         flex-direction: row
-    // .displayProfile
-    //   width: 100%
+    .displayProfile
+      .postSystem
+        .postArea
+          border: none
+          display: flex
+          align-items: center
+          .postUl
+            width: auto
+            .postPreface
+              display: none
+
+
 
 @media screen and (max-width: 630px)
   .navCenter
@@ -769,6 +958,7 @@ html body
           input
             font-size: 14px
       .modifyBtn
+        display: none
         button
           font-size: 14px
 
