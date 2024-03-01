@@ -1,24 +1,8 @@
-<h1>
-Connect Data
-</h1>
+# Front-Enter
 
-<h2>
-Outline
-</h2>
+Demo :  https://wendyhsinyun.github.io/Front-Enter
 
-### Json
-
-<p>
-
-*  Now, you have your own database, and you can create article by yourself, it's time to replace all the data from your realtime database, including 
-article page, content page, member's collection.
-
-</p>
-
-### Reminder
-
-<p>
-
-*  You can edit key/value on firebase GUI, or you can edit it on vs code.
-
-</p>
+* Fetches data from Firebase Realtime Database using Axios.
+* Implements third-party login functionality using Firebase Authentication.
+* Features two mini-games written in JavaScript.
+* Offers smooth Responsive Web Design (RWD).
